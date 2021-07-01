@@ -172,12 +172,10 @@ findGivenNames = function(x,
 
         if (NCOL(dfResponse) == 4) {
 
-            dfResponse$country_id <- "all"
+            dfResponse[ , 'country_id' := 'all']
             dfNames = data.table::rbindlist(list(dfNames, dfResponse))
 
-        }
-
-        if (NCOL(dfResponse) == 5) {
+        } else {
 
 
             dfNames = data.table::rbindlist(list(dfNames, dfResponse))
