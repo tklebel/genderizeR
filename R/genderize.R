@@ -22,7 +22,7 @@
 #' 
 #' 
 #' @examples 
-#' \dontrun{
+#' \donttest{
 #' 
 #' x = c("Winston J. Durant, ASHP past president, dies at 84", 
 #' "Gold Badge of Honour of the DGAI Prof. Dr. med. Norbert R. Roewer Wuerzburg",
@@ -30,7 +30,7 @@
 #' "JAN BASZKIEWICZ (3 JANUARY 1930 - 27 JANUARY 2011) IN MEMORIAM", 
 #' "Maria Sklodowska-Curie")
 #' 
-#' givenNames = findGivenNames(x)
+#' givenNames = findGivenNames(x, ssl.verifypeer = FALSE)
 #' givenNames = givenNames[count>40]
 #' genderize(x, genderDB=givenNames, blacklist=c('med'))
 #'

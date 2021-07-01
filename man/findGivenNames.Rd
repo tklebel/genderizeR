@@ -4,17 +4,24 @@
 \alias{findGivenNames}
 \title{Getting gender prediction data for a given text vector.}
 \usage{
-findGivenNames(x, textPrepare = TRUE, country = NULL,
-  language = NULL, apikey = NULL, queryLength = 10,
-  progress = TRUE, ssl.verifypeer = TRUE)
+findGivenNames(
+  x,
+  textPrepare = TRUE,
+  country = NULL,
+  language = NULL,
+  apikey = NULL,
+  queryLength = 10,
+  progress = TRUE,
+  ssl.verifypeer = TRUE
+)
 }
 \arguments{
-\item{x}{A text vector or a character vector of unique terms 
+\item{x}{A text vector or a character vector of unique terms
 pre-processed earlier manually or by the \code{textPrepare} function.}
 
-\item{textPrepare}{If TRUE (default) the \code{textPrepare} function 
-will be used on the \code{x} vector. Set it to FALSE if you already 
-have prepared a character vector of cleaned up and deduplicated terms 
+\item{textPrepare}{If TRUE (default) the \code{textPrepare} function
+will be used on the \code{x} vector. Set it to FALSE if you already
+have prepared a character vector of cleaned up and deduplicated terms
 that you want to send to the API for gender checking.}
 
 \item{country}{A character string with a country code for localized search
@@ -22,53 +29,54 @@ of names. Country codes follow the ISO_3166-1 alpha-2 standard
 \url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}.}
 
 \item{language}{A character string with a language code for localized search
-of names. Language codes follow the ISO_639-1 standard: 
+of names. Language codes follow the ISO_639-1 standard:
 \url{https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes}}
 
-\item{apikey}{A character string with the API key obtained via 
-\url{https://store.genderize.io}. A default is NULL, which uses the free API 
- plan. If you reached the limit of the API you can start from the last 
+\item{apikey}{A character string with the API key obtained via
+\url{https://store.genderize.io}. A default is NULL, which uses the free API
+ plan. If you reached the limit of the API you can start from the last
  checked term next time.}
 
 \item{queryLength}{How much terms can be checked in a one single query.}
 
 \item{progress}{If TRUE (default) progress bar is displayed in the console.}
 
-\item{ssl.verifypeer}{Checks the SSL Certificate. Default is TRUE. 
-You may set it to FALSE if you encounter some errors that break 
+\item{ssl.verifypeer}{Checks the SSL Certificate. Default is TRUE.
+You may set it to FALSE if you encounter some errors that break
 the connection with the API (though it is not recommended).}
 }
 \value{
-A data table with given names found in database, 
+A data table with given names found in database,
 gender predictions,
-probabilities of gender predictions, 
+probabilities of gender predictions,
 and counts how many people with a given name is recorded in the database.
 }
 \description{
-\code{findGivenNames} extracts from text unique terms and predicts  
+\code{findGivenNames} extracts from text unique terms and predicts
 gender for them.
 }
 \examples{
-\dontrun{
+\donttest{
 
-x = "Tom did play hookey, and he had a very good time. He got back home 
-     barely in season to help Jim, the small colored boy, saw next-day's wood 
-     and split the kindlings before supper-at least he was there in time 
-     to tell his adventures to Jim while Jim did three-fourths of the work. 
-     Tom's younger brother (or rather half-brother) Sid was already through 
-     with his part of the work (picking up chips), for he was a quiet boy, 
+x = "Tom did play hookey, and he had a very good time. He got back home
+     barely in season to help Jim, the small colored boy, saw next-day's wood
+     and split the kindlings before supper-at least he was there in time
+     to tell his adventures to Jim while Jim did three-fourths of the work.
+     Tom's younger brother (or rather half-brother) Sid was already through
+     with his part of the work (picking up chips), for he was a quiet boy,
      and had no adventurous, trouble-some ways. While Tom was eating his
-     supper, and stealing sugar as opportunity offered, Aunt Polly asked 
-     him questions that were full of guile, and very deep-for she wanted 
+     supper, and stealing sugar as opportunity offered, Aunt Polly asked
+     him questions that were full of guile, and very deep-for she wanted
      to trap him into damaging revealments. Like many other simple-hearted
-     souls, it was her pet vanity to believe she was endowed with a talent 
-     for dark and mysterious diplomacy, and she loved to contemplate her 
-     most transparent devices as marvels of low cunning. 
+     souls, it was her pet vanity to believe she was endowed with a talent
+     for dark and mysterious diplomacy, and she loved to contemplate her
+     most transparent devices as marvels of low cunning.
      (from 'Tom Sawyer' by Mark Twain)"
 
 xProcessed = textPrepare(x)
 
-foundNames = findGivenNames(xProcessed, textPrepare = FALSE)
+foundNames = findGivenNames(xProcessed, textPrepare = FALSE,
+                            ssl.verifypeer = FALSE)
 foundNames[count > 100]
 
 # (the results can differ due to new, updated data pulled from the API)
@@ -80,11 +88,11 @@ foundNames[count > 100]
 
 
 # localization
-findGivenNames("andrea", country = "us")
+findGivenNames("andrea", country = "us", ssl.verifypeer = FALSE)
 #      name gender probability count
 # 1: andrea female        0.97  2308
 
-findGivenNames("andrea", country = "it")
+findGivenNames("andrea", country = "it", ssl.verifypeer = FALSE)
 #      name gender probability count
 # 1: andrea  male         0.99  1070
 }

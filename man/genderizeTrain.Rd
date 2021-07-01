@@ -4,8 +4,15 @@
 \alias{genderizeTrain}
 \title{Training genderize function}
 \usage{
-genderizeTrain(x, y, givenNamesDB, probs, counts, parallel = FALSE,
-  cores = NULL)
+genderizeTrain(
+  x,
+  y,
+  givenNamesDB,
+  probs,
+  counts,
+  parallel = FALSE,
+  cores = NULL
+)
 }
 \arguments{
 \item{x}{A text vector that we want to genderize.}
@@ -77,4 +84,3 @@ genderizeTrain(x = x, y = y,
 \seealso{
 Implementation of parallel mclapply on Windows machines by Nathan VanHoudnos \url{http://edustatistics.org/nathanvan/setup/mclapply.hack.R}.
 }
-

@@ -4,7 +4,8 @@
 \name{authorships}
 \alias{authorships}
 \title{Authorships sample}
-\format{A data frame with 2641 rows and 5 variables:
+\format{
+A data frame with 2641 rows and 5 variables:
 \describe{
   \item{title}{The title of an article.}
   \item{authors}{All the authors of the article.}
@@ -17,7 +18,8 @@
    if she or he is a man or a female.}
   \item{WOSaccessionNumber}{The original ID of an article 
   in WebOfScience database.}
-}}
+}
+}
 \source{
 \url{http://webofknowledge.com/}
 }
@@ -33,4 +35,3 @@ published from 1945 to 2014.
 The sample was drawn in December 2014.
 }
 \keyword{datasets}
-

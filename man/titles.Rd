@@ -4,7 +4,8 @@
 \name{titles}
 \alias{titles}
 \title{Titles sample}
-\format{A data frame with 1190 rows and 2 variables:
+\format{
+A data frame with 1190 rows and 2 variables:
 \describe{
   \item{title}{The title of an article.}
   \item{genderCoded}{Manually coded gender of a person mentioned in the 
@@ -14,7 +15,8 @@
   "Both" is the code for two rare cases in the dataset where two people 
   were mentioned in the title and one of them was male and the other 
   was female.}
-}}
+}
+}
 \source{
 \url{http://webofknowledge.com/}
 }
@@ -30,4 +32,3 @@ published from 1945 to 2014.
 The sample was drawn in December 2014.
 }
 \keyword{datasets}
-
