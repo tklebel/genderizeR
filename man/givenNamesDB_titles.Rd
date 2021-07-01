@@ -4,14 +4,16 @@
 \name{givenNamesDB_titles}
 \alias{givenNamesDB_titles}
 \title{Gender data for titles sample}
-\format{A data.table object with 872 rows and 4 variables:
+\format{
+A data.table object with 872 rows and 4 variables:
 \describe{
   \item{name}{A term used as first name.}
   \item{gender}{The predicted gender for the term.}
   \item{probability}{The probability of the predicted gender.}
   \item{count}{How many social profiles with the term as a given name 
   is recorded in the genderize.io database.}
-}}
+}
+}
 \source{
 \url{http://genderize.io/}
 }
@@ -25,4 +27,3 @@ of \code{findGivenNames}
 function that was performed on December 26, 2014.
 }
 \keyword{datasets}
-

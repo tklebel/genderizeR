@@ -4,8 +4,13 @@
 \alias{genderizeAPI}
 \title{Getting data from genderize.io  API}
 \usage{
-genderizeAPI(x, country = NULL, language = NULL, apikey = NULL,
-  ssl.verifypeer = TRUE)
+genderizeAPI(
+  x,
+  country = NULL,
+  language = NULL,
+  apikey = NULL,
+  ssl.verifypeer = TRUE
+)
 }
 \arguments{
 \item{x}{A vector of terms to check in genderize.io database.}
@@ -68,4 +73,3 @@ $limitReset
 }
 
 }
-

@@ -4,8 +4,15 @@
 \alias{genderizeBootstrapError}
 \title{Gender prediction errors on bootstrap samples}
 \usage{
-genderizeBootstrapError(x, y, givenNamesDB, probs, counts,
-  num_bootstraps = 50, parallel = FALSE)
+genderizeBootstrapError(
+  x,
+  y,
+  givenNamesDB,
+  probs,
+  counts,
+  num_bootstraps = 50,
+  parallel = FALSE
+)
 }
 \arguments{
 \item{x}{A text vector that we want to genderize}
@@ -74,6 +81,5 @@ genderizeBootstrapError(x = x, y = y,
 
 }
 \seealso{
-In the \code{sortinghat} package: \code{\link[sortinghat]{errorest_apparent}}, \code{\link[sortinghat]{errorest_loo_boot}}, \code{\link[sortinghat]{errorest_632plus}}.
+In the \code{sortinghat} package.
 }
-
